@@ -76,8 +76,10 @@ exports.updateMenuById = (req, res) => {
 
 exports.deleteMenuById = (req, res) => {
     const { id } = req.params
+    console.log(id);
     try {
-        Menu.findOneAndDelete({"_id":id}).exec((err, menu) => {
+        Menu.findOneAndDelete({"_id":id}).then((data) => {
+            console.log(data);
             res.json({Success: 'ลบเมนู '+id+' สำเร็จแล้ว'})
         })
     } catch (error) {
