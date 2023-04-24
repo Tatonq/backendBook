@@ -1,4 +1,4 @@
-const Menu = require('../model/Menu')
+const Menu = require('../../model/Menu')
 const { Obj } = require('mongoose')
 
 exports.creteMenu = (req, res) => {
