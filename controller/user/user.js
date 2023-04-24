@@ -72,7 +72,8 @@ exports.login = async (req, res) => {
         res.setHeader('Set-Cookie', "token=" + token)
         return res.status(200).json({
             username: user.username,
-            email: user.email
+            email: user.email,
+            token: token
         })
     } else {
         return res.status(400).json({ErrorMessage: `รหัสผ่านไม่ถูกต้อง`})
